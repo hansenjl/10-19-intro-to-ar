@@ -7,3 +7,5 @@
 - Define the purpose of a migration 
 - Define a schema 
 - Discuss altering databases and models with further migrations, rollbacks
+
+[Active Record Docs](https://guides.rubyonrails.org/active_record_basics.html)
