@@ -4,7 +4,8 @@ Bundler.require
 
 # require classes 
 
-require_relative '../app/models/movie'
+# require_relative '../app/models/movie'
+require_all 'app'
 
 # connect to a DB
 ENV['SINATRA_ENV'] ||= 'development'
