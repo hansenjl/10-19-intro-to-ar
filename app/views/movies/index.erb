@@ -1,5 +1,6 @@
 <h1> My Movies!  </h1>
 <h2> Index View </h2>
 <% @movies.each do |m|  %> 
-  <%= m.id %> -  <%=  m.title %> <br>
+
+  <%= m.id %> -  <a href="/movies/<%=m.id%>"><%=m.title %></a> <br>
 <% end %>

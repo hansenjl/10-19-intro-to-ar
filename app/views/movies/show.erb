@@ -1,4 +1,10 @@
 <h2>Show page </h2>
 <h3>Title: <%= @movie.title %> </h3>
-<p>Director: <%= @movie.director.name %></p>
-Genre: <%=  @movie.genre.name %>
+<p>Director: <%= @movie.director.try(:name) || "N/A" %></p>
+Genre: <%=  @movie.genre ? @movie.genre.name : "N/A" %> <br>
+<a href="/movies/<%= @movie.id %>/edit">Edit</a>
+
+<form method="POST" action="/movies/<%= @movie.id %>">
+   <input type="hidden" name="_method" value="DELETE">
+   <input type="submit" value="DELETE MOVIE">
+</form>
