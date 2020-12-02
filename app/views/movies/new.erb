@@ -1,6 +1,12 @@
 <h2>Make a new movie here!</h2>
 <form method="POST" action="/movies">
     Title: <input type="text" name="title">
+    Director: 
+    <select name="director_id">
+        <% Director.all.each do |director| %>
+            <option value="<%= director.id %>"><%= director.name %></option>
+        <% end %>
+    </select>
     <input type="submit" value="Create Movie">
 </form>
 
