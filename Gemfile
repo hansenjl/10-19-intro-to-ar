@@ -10,3 +10,4 @@ gem 'require_all'
 gem 'thin'
 gem 'shotgun'
 gem 'tux'
+gem 'bcrypt' #provides a hashing algorithm "abc123"  => "dskfjalskdf213418urfein48r9"

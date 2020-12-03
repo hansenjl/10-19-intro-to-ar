@@ -1,6 +1,7 @@
 class Movie < ActiveRecord::Base
     belongs_to :director
     belongs_to :genre
+    belongs_to :user 
 
     #join table b/c it has 2 foreign keys or 2 belongs_to relationships
     
