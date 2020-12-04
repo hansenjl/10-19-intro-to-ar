@@ -23,6 +23,22 @@ class UserController < ApplicationController
         
     end
 
+    get '/login' do #show the form
+        erb :"/users/login"
+    end
+
+    post '/login' do  #process the form 
+        user = User.find_by_email(params[:email])
+        # check and see if there is a user w/ that email address
+        # is there password correct
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id 
+            redirect '/movies'
+        else
+            redirect '/login'
+        end
+    end
+
     get '/logout' do 
         session.delete(:user_id)  # delete just the user_id 
         # session.clear 

@@ -12,7 +12,6 @@ class ApplicationController < Sinatra::Base
     end
 
     helpers do  #allows our views to access these methods 
-
         def logged_in?
             !!current_user
         end
@@ -24,6 +23,13 @@ class ApplicationController < Sinatra::Base
         #    else 
         #     @current_user =  User.find(session[:user_id])
         #    end
+        end
+    end
+
+    private 
+    def redirect_if_not_logged_in
+        if !logged_in?
+            redirect '/login'
         end
     end
 
